@@ -117,10 +117,18 @@ Funcion Par_impar <- numparimpar ( num )//10
 	FinSi
 Fin Funcion
 Funcion multiplos_entre_dos_numeros <- multiplosn ( num1,num2 )//11
-	si num1 mod num2 = 0 Entonces
-		escribir "el numero " " " num1 " "   " es multiplo del numero" " "  num2
-	sino
-		Escribir "el numero" " " num1 " "   "no es multiplo del numero" " "  num2 
+	si num1>num2 Entonces
+		si num1 mod num2 = 0 Entonces
+			escribir "el numero " " " num1 " "   " es multiplo del numero" " "  num2
+		sino
+			Escribir "el numero" " " num1 " "   "no es multiplo del numero" " "  num2 
+		FinSi
+	SiNo
+			si num2 mod num1 = 0 Entonces
+				escribir "el numero " " " num2 " "   " es multiplo del numero" " "  num1
+			sino
+				Escribir "el numero" " " num2 " "   "no es multiplo del numero" " "  num1
+			FinSi
 	FinSi
 Fin Funcion
 Funcion Mayor_menor_secuencia <- secmaymen ( ct )//12
@@ -664,8 +672,8 @@ Algoritmo Menu
 							escribir"ingrese un numero"
 							leer num2
 							calculadora("+",num1,num2)
-							Limpiar Pantalla
 							Esperar 3 Segundos
+							Limpiar Pantalla
 						"2":
 							escribir "sumar o restar"
 							escribir "ingrese un numero1"
